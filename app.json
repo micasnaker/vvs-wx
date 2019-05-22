@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/home/goodsInfo/goodsInfo",
+    "pages/index/index",
+    "pages/classify/classify",
+    "pages/cart/cart",
+    "pages/person/person",
+    "pages/person/orderList/orderList",
+    "pages/person/personInfo/personInfo",
+    "pages/person/address/address",
+    "pages/person/address/addAddress/addAddress",
+    "pages/person/address/editAddress/editAddress",
+    "pages/person/set/set",
+    "pages/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "土木金华",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#b7b7b7",
+    "selectedColor": "#AB956D",
+    "borderStyle": "black",
+    "backgroundColor": "#f5f5f5",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "images/tabbar1/shouye.png",
+        "selectedIconPath": "images/tabbar2/shouye.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "iconPath": "images/tabbar1/fenlei.png",
+        "selectedIconPath": "images/tabbar2/fenlei.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "images/tabbar1/cart.png",
+        "selectedIconPath": "images/tabbar2/cart.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "iconPath": "images/tabbar1/person.png",
+        "selectedIconPath": "images/tabbar2/person.png",
+        "text": "我的订单"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

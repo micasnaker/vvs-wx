@@ -1,0 +1,122 @@
+/* pages/person/orderList/orderList.wxss */
+
+/* 购物车为空时 */
+
+.empty {
+  text-align: center;
+  padding: 80rpx 20rpx;
+}
+
+.empty text:first-child {
+  color: #000;
+  font-size: 18px;
+}
+
+.empty text {
+  color: #9d9d9d;
+  font-size: 15px;
+  font-family: PingFangSC-regular;
+}
+
+/* 订单列表 */
+
+.have_wrap {
+  height: 100%;
+  width: 86%;
+  padding: 20rpx 20rpx;
+  margin: 0 auto;
+  display: flex;
+}
+
+.have_wrap text {
+  font-size: 13px;
+  font-family: PingFangSC-regular;
+  color: #101010;
+  line-height: 80rpx;
+}
+
+.content {
+  margin-left: 50rpx;
+}
+
+.ufv {
+  display: flex;
+}
+
+.ufv text:last-child {
+  float: right;
+}
+
+.have_wrap image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+/* 猜你喜欢商品列表 */
+
+.newest-title {
+  width: 100%;
+  padding: 30rpx 0;
+  height: 40rpx;
+  color: #ab956d;
+  text-align: center;
+}
+
+.newest-box {
+  padding: 0 40rpx;
+}
+
+.newest-box .newest-list {
+  display: inline-block;
+  width: 325rpx;
+  margin: 0 20rpx 20rpx 0;
+  border-radius: 10px;
+  text-align: center;
+  background: #f4f4f4;
+  padding-bottom: 3%;
+}
+
+.newest-box .newest-list:nth-child(2n) {
+  margin-right: 0;
+}
+
+.newest-box .newest-list image {
+  width: 175rpx;
+  height: 175rpx;
+  margin: 20rpx 0 10rpx;
+}
+
+.newest-box .newest-list .newest-text {
+  font-size: 28rpx;
+}
+
+.price {
+  display: flex;
+  justify-content: space-around;
+}
+
+.price text:first-child {
+  color: rgba(162, 49, 62, 1);
+  font-size: 17px;
+}
+
+.price text:last-child {
+  text-decoration: line-through;
+  color: rgba(102, 100, 102, 1);
+}
+
+.print {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 20rpx;
+  color: #666466;
+}
+
+.print text:last-child {
+  font-size: 12px;
+  background-color: #e51c23;
+  color: #fff;
+  font-family: Microsoft Yahei;
+  border-radius: 5px;
+  width: 120rpx;
+}

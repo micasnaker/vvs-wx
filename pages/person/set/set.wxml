@@ -1,0 +1,2 @@
+<!--pages/person/set/set.wxml-->
+<i-button bind:click="loginOut" type="error">退出登录</i-button>

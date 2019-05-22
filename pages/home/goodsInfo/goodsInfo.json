@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "backgroundColor": "#eeeeee",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "i-input": "../../../dist/input/index",
+    "i-button": "../../../dist/button/index",
+    "i-tabs": "../../../dist/tabs/index",
+    "i-tab": "../../../dist/tab/index",
+    "i-icon": "../../../dist/icon/index",
+    "i-toast": "../../../dist/toast/index"
+  }
+}

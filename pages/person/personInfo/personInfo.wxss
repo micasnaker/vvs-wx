@@ -1,0 +1,120 @@
+/* pages/person/personInfo/personInfo.wxss */
+
+.personInfo image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  float: right;
+  padding-bottom: -24rpx;
+}
+
+.i-cell-text {
+  width: 100rpx !important;
+}
+
+/* 弹出层 */
+
+.toast-box {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+.toastbg {
+  opacity: 0.2;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.showToast {
+  position: absolute;
+  opacity: 1;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 40%;
+}
+
+.toast-title {
+  background-color: #ffff;
+  color: #000;
+  text-align: center;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+}
+
+.toast-title text {
+  font-family: PingFangSC-regular;
+  font-size: 15px;
+}
+
+.toast-main {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  background-color: white;
+  text-align: center;
+}
+
+.toast-input {
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 1px solid #ddd;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.toast-input:placeholder {
+  font-family: PingFangSC-regular;
+  font-size: 15px;
+}
+
+.toast-button {
+  display: flex;
+}
+
+.button1 {
+  width: 50%;
+}
+
+.button1 button {
+  font-family: PingFangSC-regular;
+  font-size: 15px;
+}
+
+.button2 {
+  width: 50%;
+}
+
+.button2 button {
+  font-family: PingFangSC-regular;
+  font-size: 15px;
+}
+
+.button1 button {
+  width: 100%;
+  background-color: white;
+  color: #000;
+  border-radius: 0px;
+  border-bottom-left-radius: 16rpx;
+}
+
+.button2 button {
+  width: 100%;
+  background-color: white;
+  color: #1e90ff;
+  border-radius: 0px;
+  border-bottom-right-radius: 16rpx;
+}
+
+.picker {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}

@@ -1,0 +1,89 @@
+<view class='addAddress'>
+  <!-- 姓名 -->
+  <view class="ship_list">
+
+    <view class='ship_area'>
+
+      <text style='padding-right:58rpx'>姓名</text>
+      <input bindinput='name' class='ship_citychoose' placeholder="收货人姓名" />
+    </view>
+  </view>
+
+  <!-- 电话 -->
+  <view class="ship_list">
+
+    <view class='ship_area'>
+
+      <text style='padding-right:58rpx'>电话</text>
+
+      <input maxlength="11" bindinput='phone' class='ship_citychoose' placeholder="收货人手机号" />
+    </view>
+  </view>
+
+  <!--地区三级联动-->
+  <view class="ship_list">
+
+    <view class='ship_area'>
+
+      <text>选择地区</text>
+      <!--要显示的省-市-区-->
+
+      <input class='ship_citychoose' placeholder="选择" value="{{province}}/{{city}}/{{county}}" focus="{{focus}}" bindfocus="open" />
+      <!--要显示的省-市-区-->
+    </view>
+  </view>
+
+  <!--弹出动画  -->
+  <view wx:if="{{condition}}" class="citypicker">
+
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+
+      <view class="cityheader">
+
+        <view bindtap="open" class="city-cancel">取消</view>
+
+        <view bindtap="open" class="city-true">确定</view>
+      </view>
+
+      <picker-view-column>
+
+        <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:20px;">{{item}}</view>
+      </picker-view-column>
+
+      <picker-view-column>
+
+        <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:20px;">{{item}}</view>
+      </picker-view-column>
+
+      <picker-view-column>
+
+        <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:40px;">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+
+
+  <!-- 详细地址 -->
+
+  <view class="ship_lists">
+
+    <view class='ship_areas'>
+
+      <text style='padding-right:58rpx'>详细地址</text>
+
+      <textarea bindinput='detail' class='ship_citychooses' placeholder="街道门牌、楼层房间号等信息" />
+    </view>
+  </view>
+
+  <!-- 设为默认 -->
+  <view class='checkbox'>
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox_label">
+        <checkbox value='{{checked}}' checked="{{checked}}" />设为默认
+      </label>
+    </checkbox-group>
+  </view>
+
+  <!-- 保存 -->
+  <i-button bind:click="save" type="error">保存并使用</i-button>
+</view>

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "编辑地址",
+  "backgroundColor": "#eeeeee",
+  "enablePullDownRefresh": false,
+  "component": true,
+  "usingComponents": {
+    "i-input": "../../../../dist/input/index",
+    "i-button": "../../../../dist/button/index",
+    "i-checkbox": "../../../../dist/checkbox/index"
+  }
+}

@@ -1,0 +1,157 @@
+/* pages/person/person.wxss */
+
+/* 个人头像名称 */
+.person {
+  margin-top: 5%;
+  background-color: #f4f4f4;
+}
+
+.header {
+  text-align: center;
+  padding-bottom: 30rpx;
+}
+
+.name {
+  padding-bottom: 20rpx;
+}
+
+/* 四栏 */
+.header image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin: 20rpx 20rpx;
+}
+
+.integral {
+  display: flex;
+  justify-content: space-evenly;
+  width: 96%;
+  height: 130rpx;
+  background-color: #ffff;
+  padding-top: 30rpx;
+  margin: 0 auto;
+  line-height: 50rpx;
+  border-radius: 10px;
+}
+
+.integral_wrap {
+  width: 24%;
+  font-size: 13px;
+  color: #5e5e5e;
+  font-family: Microsoft Yahei;
+}
+
+/* 订单 */
+.order{
+  width: 96%;
+  margin: 0 auto;
+  padding-bottom: 20rpx;
+}
+
+.cell-panel-demo{
+  border-radius: 10px;
+}
+
+/* 待五项 */
+.order_status{
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  background-color: #fff;
+  border-top: 0.1rpx solid #f4f4f4;
+  /* border-top-width: 80%; */
+  padding-bottom: 5%;
+}
+
+.order_wrap{
+  margin-top: 20rpx;
+}
+
+.order_status text:first-child{
+  font-size: 18px;
+}
+
+.order_wrap text{
+  font-size: 12px;
+}
+
+/* 任务中心 */
+.task{
+  padding-bottom: 20rpx;
+  border-radius: 10px;
+  width: 96%;
+  margin: 0 auto;
+}
+
+/* 个人信息中心 */
+.cent{
+  padding-bottom: 20rpx;
+  border-radius: 10px;
+  width: 96%;
+  margin: 0 auto;
+}
+
+/* 猜你喜欢列表 */
+/* 商品列表 */
+.newest-title{
+    width: 100%;
+    padding:30rpx 0;
+    height: 40rpx;
+    color: #AB956D;
+    text-align: center;
+}
+.newest-box{
+    padding:0 40rpx;
+}
+.newest-box .newest-list{
+    display: inline-block;
+    width: 325rpx;
+    margin:0 20rpx 20rpx 0;
+    border-radius: 10px;
+    text-align: center;
+    background: #ffff;
+    padding-bottom: 3%;
+}
+.newest-box .newest-list:nth-child(2n){
+    margin-right: 0;
+}
+.newest-box .newest-list image{
+    width: 175rpx;
+    height: 175rpx;
+    margin: 20rpx 0 10rpx;
+}
+.newest-box .newest-list .newest-text{
+    font-size: 28rpx;
+}
+
+.price{
+  display: flex;
+  justify-content: space-around;
+}
+
+.price text:first-child{
+  color: rgba(162,49,62,1);
+  font-size: 17px;
+}
+
+.price text:last-child{
+  text-decoration:line-through;
+  color: rgba(102,100,102,1);
+}
+
+.print{
+  display: flex;
+  justify-content: space-around;
+  margin-left: 20rpx;
+  color: #666466;
+}
+
+.print text:last-child{
+  font-size: 12px;
+  background-color: #E51C23;
+  color: #FFFFFF;
+  font-family: Microsoft Yahei;
+  border-radius: 5px;
+  width: 120rpx;
+}

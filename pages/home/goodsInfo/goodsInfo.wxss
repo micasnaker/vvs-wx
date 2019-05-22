@@ -1,0 +1,103 @@
+/* pages/home/goodsInfo/goodsInfo.wxss */
+.goodsInfo{
+  height: 100%;
+}
+
+/* 轮播图部分 */
+
+swiper {
+  height: 650rpx;
+  width: 100%;
+  text-align: center;
+}
+
+swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 商品介绍 */
+
+.content {
+  width: 96%;
+  margin: 0 auto;
+  font-size: 15px;
+  font-family: Microsoft Yahei;
+}
+
+.content_price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price_wrap text {
+  color: #ed1709;
+}
+
+.price_wrap text:last-child {
+  color: #666466;
+  text-decoration: line-through;
+  padding-left: 10rpx;
+}
+
+.tab_wrap{
+  height: 500rpx;
+}
+
+.wrap{
+  width: 96%;
+  margin: 0 auto;
+}
+/* 底部固定foot */
+
+.foot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  z-index: 999;
+  background-color: #ffff;
+}
+
+.iconfont {
+  font-size: 45rpx;
+}
+
+.foot_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
+  line-height: 100rpx;
+  margin-left: 20rpx;
+}
+
+.icon text {
+  padding-left: 20rpx;
+}
+
+.btn_shopCart {
+  width: 280rpx;
+  height: 200rpx;
+  line-height: 100rpx;
+  color: #fff;
+  font-size: 32rpx;
+  background-color: #888;
+  float: right;
+  text-align: center;
+  font-family: Microsoft Yahei;
+}
+
+.btn_buy {
+  width: 280rpx;
+  height: 200rpx;
+  line-height: 100rpx;
+  color: #fff;
+  font-size: 32rpx;
+  float: right;
+  text-align: center;
+  background-color: #ed1709;
+  font-family: Microsoft Yahei;
+}

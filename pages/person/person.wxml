@@ -1,0 +1,128 @@
+<view class='person'>
+
+  <!-- 头像部分 -->
+  <view class='header'>
+    <image src='{{memberInfo.avatar}}' wx:if="{{user_info.token_sc}}"></image>
+    <text bindtap='toLogin' wx:else>登录</text>
+    <view class='name'>
+      <text wx:if="{{user_info.token_sc}}">{{memberInfo.nick_name}}</text>
+      <text  bindtap='toLogin' wx:else>登录</text>
+    </view>
+
+    <!-- 四栏 -->
+    <view class='four'>
+      <view class='integral'>
+        <view class='integral_wrap'>
+          <text>{{memberInfo.gold_fish}}\n金鱼</text>
+        </view>
+        <view class='integral_wrap'>
+          <text>{{memberInfo.silver_fish}}\n银鱼</text>
+        </view>
+        <view class='integral_wrap'>
+          <text>{{memberInfo.ufv}}\nUFV</text>
+        </view>
+        <view class='integral_wrap'>
+          <text>0.00\n余额</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 我的订单 -->
+  <view class='order'>
+    <i-panel class="cell-panel-demo">
+      <i-cell url="/pages/person/orderList/orderList" title="我的订单" is-link value="查看全部订单"></i-cell>
+    </i-panel>
+
+    <view class='order_status'>
+      <view class='order_wrap'>
+        <text class="iconfont icon-daifukuan">\n</text>
+        <text>待付款</text>
+      </view>
+
+      <view class='order_wrap'>
+        <text class="iconfont icon-daifahuo">\n</text>
+        <text>待发货</text>
+      </view>
+
+      <view class='order_wrap'>
+        <text class="iconfont icon-daishouhuo">\n</text>
+        <text>待收货</text>
+      </view>
+
+      <view class='order_wrap'>
+        <text class="iconfont icon-daipingjia">\n</text>
+        <text>待评价</text>
+      </view>
+
+      <view class='order_wrap'>
+        <text class="iconfont icon-tuikuan">\n</text>
+        <text>退款维权</text>
+      </view>
+    </view>
+
+  </view>
+  <view class='task'>
+    <i-panel class="cell-panel-demo">
+      <i-cell title="任务中心" is-link>
+        <i-icon type="activity_fill" slot="icon" color="#F9F900" />
+      </i-cell>
+    </i-panel>
+    <i-panel class="cell-panel-demo">
+      <i-cell url="/pages/person/address/address" title="收货地址" is-link>
+        <i-icon type="coordinates" slot="icon" color='#5A5AAD' />
+      </i-cell>
+    </i-panel>
+    <i-panel class="cell-panel-demo">
+      <i-cell title="赠品" is-link>
+        <i-icon type="commodity" slot="icon" color='#5A5AAD' />
+      </i-cell>
+    </i-panel>
+  </view>
+
+  <view class='cent'>
+    <i-panel class="cell-panel-demo">
+      <i-cell title="分销员中心" is-link>
+        <i-icon type="mine_fill" slot="icon" color='#5A5AAD' />
+      </i-cell>
+    </i-panel>
+    <i-panel class="cell-panel-demo">
+      <i-cell bindtap="personInfo" title="个人信息" is-link>
+        <i-icon type="businesscard_fill" slot="icon" color='#5A5AAD' />
+      </i-cell>
+    </i-panel>
+    <i-panel class="cell-panel-demo">
+      <i-cell bindtap="accSet" title="账号设置" is-link>
+        <i-icon type="mine_fill" slot="icon" color='#5A5AAD' />
+      </i-cell>
+    </i-panel>
+  </view>
+
+  <!-- 猜你喜欢 -->
+  <view class='newest'>
+    <view class="newest-title">
+      <text>猜你喜欢</text>
+    </view>
+    <view class="newest-box">
+      <view class="newest-list" bindtap='toGoodsInfo' wx:for="{{guessList}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}">
+        <view>
+          <image src="{{item.img}}"></image>
+          <view class="newest-text">
+            <text>{{item.name}}</text>
+          </view>
+          <view class="newest-text price">
+            <text>￥ {{item.price}}</text>
+            <text>￥ {{item.price_origin}}</text>
+          </view>
+          <view class='newest-text print'>
+            <text>已售{{item.sold_count}}件</text>
+            <text>立即购买</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+</view>

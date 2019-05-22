@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "购物车",
+  "backgroundColor": "#eeeeee",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "i-button": "../../dist/button/index"
+  }
+}

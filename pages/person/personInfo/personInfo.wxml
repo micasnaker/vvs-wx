@@ -1,0 +1,36 @@
+<!--pages/person/personInfo/personInfo.wxml-->
+<view class='personInfo'>
+  <i-panel class="cell-panel-demo" title="基本信息">
+  </i-panel>
+  <i-cell class="i-cell-text" title="头像">
+    <image src='{{userInfo.avatar}}'></image>
+  </i-cell>
+  <i-cell wx:if="userInfo.nick_name" bindtap="name" title="姓名" is-link value="{{userInfo.nick_name}}"></i-cell>
+  <i-cell wx:else bindtap="name" title="姓名" is-link value="{{userInfo.nick_name}}"></i-cell>
+  <i-cell title="手机号" value="{{userInfo.phone}}"></i-cell>
+  <i-cell title="性别" is-link value="{{sex_person}}"></i-cell>
+  <i-cell url="/pages/person/address/address" title="收货地址" is-link></i-cell>
+
+  <!-- 弹出层 -->
+  <view class='toast-box' hidden='{{!ifName}}'>
+    <view class='toastbg'></view>
+    <view class='showToast'>
+      <view class='toast-title'>
+        <text>修改姓名</text>
+      </view>
+      <view class='toast-main'>
+        <view class='toast-input'>
+          <input placeholder='{{userInfo.nick_name}}' bindinput='setValue' data-name='stuEidtName'></input>
+        </view>
+      </view>
+      <view class='toast-button'>
+        <view class='button1'>
+          <button catchtap='cancel'>取消</button>
+        </view>
+        <view class='button2'>
+          <button catchtap='confirm'>确定</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

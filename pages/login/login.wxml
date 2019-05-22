@@ -1,0 +1,16 @@
+<!--pages/login/login.wxml-->
+<view class='login'>
+  <!-- <i-panel title="用户登录">
+    <i-input value="{{ value1 }}" type="number" title="用户名" autofocus placeholder="用户名" />
+    <i-input value="{{ value2 }}" type="password" title="输入密码" placeholder="输入密码" />
+  </i-panel> -->
+  <view>
+  <label>用户名</label>
+    <input bindinput="phone" type="number" placeholder='请输入用户名'></input>
+  </view>
+  <view>
+  <label>密码</label>
+    <input  bindinput="pass" type="password" placeholder='请输入密码'></input>
+  </view>
+  <i-button bind:click="login" type="error">登录</i-button>
+</view>

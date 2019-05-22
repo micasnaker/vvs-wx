@@ -1,0 +1,221 @@
+<!--pages/person/orderList/orderList.wxml-->
+<view class='orderList'>
+  <!-- 标签栏 -->
+  <view class='tab'>
+    <i-tabs current="{{ current }}" bindchange="handleChange">
+      <i-tab key="tab1" title="全部"></i-tab>
+      <i-tab key="tab2" title="待付款"></i-tab>
+      <i-tab key="tab3" title="待发货"></i-tab>
+      <i-tab key="tab4" title="已发货"></i-tab>
+      <i-tab key="tab5" title="待评价"></i-tab>
+    </i-tabs>
+    <view class='tab_wrap'>
+
+      <!-- 全部订单 -->
+      <view wx:if="{{tab1}}">
+        <!-- 订单列表 -->
+        <!-- 无订单 -->
+        <view class='empty' wx:if="{{orderList.list.length<=0}}">
+          <text>暂无订单 T.T\n</text>
+          <text>快给我挑点宝贝\n</text>
+          <i-button bind:click="goHome" i-class="btn" type="error" inline>去逛逛</i-button>
+        </view>
+        <!-- 有订单 -->
+        <view class='have' wx:else>
+          <view class='have_wrap' wx:for="{{orderList.list}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}">
+
+            <radio class='radio'>
+              <image src='{{item.orders_goods[index].path}}'></image>
+            </radio>
+
+            <view class='content'>
+              <text>{{item.orders_goods[index].goods_name}}\n</text>
+              <view class='ufv' wx:if='{{item.orders_goods[index].price_type==3}}'>
+                <text decode="{{true}}" space="{{true}}">UFV {{item.orders_goods[index].price}} UFV {{item.orders_goods[index].price_origin}}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x{{item.orders_goods[index].count}}</text>
+              </view>
+
+              <view class='ufv' wx:elif='{{item.orders_goods[index].price_type==2}}'>
+                <text decode="{{true}}" space="{{true}}">金鱼 {{item.orders_goods[index].price}} 金鱼 {{item.orders_goods[index].price_origin}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x{{item.orders_goods[index].count}}</text>
+              </view>
+
+              <view class='ufv' wx:else>
+                <text decode="{{true}}" space="{{true}}">银鱼 {{item.orders_goods[index].price}} 银鱼 {{item.orders_goods[index].price_origin}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x{{item.orders_goods[index].count}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+
+      <!-- 待付款 -->
+      <view wx:if="{{tab2}}">
+        <!-- 订单列表 -->
+        <!-- 无订单 -->
+        <view class='empty' wx:if="{{obligationList.list.length<=0}}">
+          <text>暂无订单 T.T\n</text>
+          <text>快给我挑点宝贝\n</text>
+          <i-button bind:click="goHome" i-class="btn" type="error" inline>去逛逛</i-button>
+        </view>
+        <!-- 有订单 -->
+        <view class='have' wx:else>
+          <view class='have_wrap' wx:for="{{obligationList.list}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}">
+
+            <radio class='radio'>
+              <image src='{{item.orders_goods[index].path}}'></image>
+            </radio>
+
+            <view class='content'>
+              <text>{{item.orders_goods[index].goods_name}}\n</text>
+              <view class='ufv' wx:if='{{item.orders_goods[index].price_type==3}}'>
+                <text decode="{{true}}" space="{{true}}">UFV {{item.orders_goods[index].price}} UFV {{item.orders_goods[index].price_origin}}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x{{item.orders_goods[index].count}}</text>
+              </view>
+
+              <view class='ufv' wx:elif='{{item.orders_goods[index].price_type==2}}'>
+                <text decode="{{true}}" space="{{true}}">金鱼 {{item.orders_goods[index].price}} 金鱼 {{item.orders_goods[index].price_origin}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x{{item.orders_goods[index].count}}</text>
+              </view>
+
+              <view class='ufv' wx:else>
+                <text decode="{{true}}" space="{{true}}">银鱼 {{item.orders_goods[index].price}} 银鱼 {{item.orders_goods[index].price_origin}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x{{item.orders_goods[index].count}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+
+      <!-- 待发货 -->
+      <view wx:if="{{tab3}}">
+        <!-- 订单列表 -->
+        <!-- 无订单 -->
+        <view class='empty' wx:if="{{unDeliverList.list.length<=0}}">
+          <text>暂无订单 T.T\n</text>
+          <text>快给我挑点宝贝\n</text>
+          <i-button bind:click="goHome" i-class="btn" type="error" inline>去逛逛</i-button>
+        </view>
+        <!-- 有订单 -->
+        <view class='have'>
+          <view class='have_wrap' wx:for="{{unDeliverList.list}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}">
+
+            <radio class='radio'>
+              <image src='{{item.orders_goods[index].path}}'></image>
+            </radio>
+
+            <view class='content'>
+              <text>{{item.orders_goods[index].goods_name}}\n</text>
+              <view class='ufv' wx:if='{{item.orders_goods[index].price_type==3}}'>
+                <text decode="{{true}}" space="{{true}}">UFV {{item.orders_goods[index].price}} UFV {{item.orders_goods[index].price_origin}}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x{{item.orders_goods[index].count}}</text>
+              </view>
+
+              <view class='ufv' wx:elif='{{item.orders_goods[index].price_type==2}}'>
+                <text decode="{{true}}" space="{{true}}">金鱼 {{item.orders_goods[index].price}} 金鱼 {{item.orders_goods[index].price_origin}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x{{item.orders_goods[index].count}}</text>
+              </view>
+
+              <view class='ufv' wx:else>
+                <text decode="{{true}}" space="{{true}}">银鱼 {{item.orders_goods[index].price}} 银鱼 {{item.orders_goods[index].price_origin}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x{{item.orders_goods[index].count}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+
+      <!-- 已发货 -->
+      <view wx:if="{{tab4}}">
+        <!-- 订单列表 -->
+        <!-- 无订单 -->
+        <view class='empty' wx:if="{{deliverList.list.length<=0}}">
+          <text>暂无订单 T.T\n</text>
+          <text>快给我挑点宝贝\n</text>
+          <i-button bind:click="goHome" i-class="btn" type="error" inline>去逛逛</i-button>
+        </view>
+        <!-- 有订单 -->
+        <view class='have' wx:else>
+          <view class='have_wrap' wx:for="{{deliverList.list}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}">
+
+            <radio class='radio'>
+              <image src='{{item.orders_goods[index].path}}'></image>
+            </radio>
+
+            <view class='content'>
+              <text>{{item.orders_goods[index].goods_name}}\n</text>
+              <view class='ufv' wx:if='{{item.orders_goods[index].price_type==3}}'>
+                <text decode="{{true}}" space="{{true}}">UFV {{item.orders_goods[index].price}} UFV {{item.orders_goods[index].price_origin}}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x{{item.orders_goods[index].count}}</text>
+              </view>
+
+              <view class='ufv' wx:elif='{{item.orders_goods[index].price_type==2}}'>
+                <text decode="{{true}}" space="{{true}}">金鱼 {{item.orders_goods[index].price}} 金鱼 {{item.orders_goods[index].price_origin}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x{{item.orders_goods[index].count}}</text>
+              </view>
+
+              <view class='ufv' wx:else>
+                <text decode="{{true}}" space="{{true}}">银鱼 {{item.orders_goods[index].price}} 银鱼 {{item.orders_goods[index].price_origin}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x{{item.orders_goods[index].count}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 待评价 -->
+      <view wx:if="{{tab5}}">
+        <!-- 订单列表 -->
+        <!-- 无订单 -->
+        <view class='empty' wx:if="{{evaluate.list.length<=0}}">
+          <text>暂无订单 T.T\n</text>
+          <text>快给我挑点宝贝\n</text>
+          <i-button bind:click="goHome" i-class="btn" type="error" inline>去逛逛</i-button>
+        </view>
+        <!-- 有订单 -->
+        <view class='have' wx:else>
+          <view class='have_wrap' wx:for="{{evaluate.list}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}">
+
+            <radio class='radio'>
+              <image src='{{item.orders_goods[index].path}}'></image>
+            </radio>
+
+            <view class='content'>
+              <text>{{item.orders_goods[index].goods_name}}\n</text>
+              <view class='ufv' wx:if='{{item.orders_goods[index].price_type==3}}'>
+                <text decode="{{true}}" space="{{true}}">UFV {{item.orders_goods[index].price}} UFV {{item.orders_goods[index].price_origin}}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x{{item.orders_goods[index].count}}</text>
+              </view>
+
+              <view class='ufv' wx:elif='{{item.orders_goods[index].price_type==2}}'>
+                <text decode="{{true}}" space="{{true}}">金鱼 {{item.orders_goods[index].price}} 金鱼 {{item.orders_goods[index].price_origin}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x{{item.orders_goods[index].count}}</text>
+              </view>
+
+              <view class='ufv' wx:else>
+                <text decode="{{true}}" space="{{true}}">银鱼 {{item.orders_goods[index].price}} 银鱼 {{item.orders_goods[index].price_origin}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x{{item.orders_goods[index].count}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 猜你喜欢 -->
+  <view class='newest'>
+    <view class="newest-title">
+      <text>猜你喜欢</text>
+    </view>
+    <view class="newest-box">
+      <view class="newest-list" bindtap='toGoodsInfo' wx:for="{{guessList}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}">
+        <view>
+          <image src="{{item.img}}"></image>
+          <view class="newest-text">
+            <text>{{item.name}}</text>
+          </view>
+          <view class="newest-text price">
+            <text>￥ {{item.price}}</text>
+            <text>￥ {{item.price_origin}}</text>
+          </view>
+          <view class='newest-text print'>
+            <text>已售{{item.sold_count}}件</text>
+            <text>立即购买</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</view>

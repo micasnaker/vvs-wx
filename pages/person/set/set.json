@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "账号设置",
+  "backgroundColor": "#eeeeee",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "i-input": "../../../dist/input/index",
+    "i-button": "../../../dist/button/index"
+  }
+}

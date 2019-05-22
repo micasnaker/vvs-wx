@@ -1,0 +1,72 @@
+<!--pages/home/goodsInfo/goodsInfo.wxml-->
+<view class='goodsInfo'>
+  <!-- 轮播图 -->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{goodsInfo.imgs}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}">
+      <swiper-item>
+        <image src="{{item.path}}" class="slide-image" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 商品介绍 -->
+  <view class='content'>
+    <text>【{{goodsInfo.cat1_name}}】{{goodsInfo.name}}\n</text>
+    <text>已售{{goodsInfo.sold_count}}件\n</text>
+    <view class='content_price'>
+      <view class='price_wrap' wx:if="goodsInfo.price_type==3">
+        <text>UFV {{goodsInfo.price}}</text>
+        <text>UFV {{goodsInfo.price_origin}}</text>
+      </view>
+
+      <view class='price_wrap' wx:elif="goodsInfo.price_type==2">
+        <text>金鱼 {{goodsInfo.price}}</text>
+        <text>金鱼 {{goodsInfo.price_origin}}</text>
+      </view>
+
+      <view class='price_wrap' wx:else>
+        <text>银鱼 {{goodsInfo.price}}</text>
+        <text>银鱼 {{goodsInfo.price_origin}}</text>
+      </view>
+      <text>{{goodsInfo.sold_count}}人已买</text>
+    </view>
+  </view>
+
+  <!-- 标签栏 -->
+  <view class='tab'>
+    <i-tabs current="{{ current }}" bindchange="handleChange">
+      <i-tab key="tab1" title="商品介绍"></i-tab>
+      <i-tab key="tab2" title="商品参数"></i-tab>
+      <i-tab key="tab3" title="购买须知"></i-tab>
+    </i-tabs>
+    <view class='tab_wrap'>
+
+      <view class='wrap' wx:if="{{tab1}}">
+        <text>{{goodsInfo.product_description}}</text>
+      </view>
+
+      <view class='wrap' wx:if="{{tab2}}">
+        <text>{{goodsInfo.product_parameter}}</text>
+      </view>
+
+      <view class='wrap' wx:if="{{tab3}}">
+        <text>{{goodsInfo.product_notes}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部tab -->
+  <view class='foot' style='margin-bottom:{{btuBottom}}'>
+    <view class='foot_wrap'>
+      <view class='icon'>
+        <text class="iconfont icon-shouye"></text>
+
+        <text class="iconfont icon-gouwuchekong"></text>
+      </view>
+      <view>
+        <text class='btn_buy'>立即购买</text>
+        <text class='btn_shopCart' bindtap='toShopCart'>加入购物车</text>
+      </view>
+    </view>
+  </view>
+</view>

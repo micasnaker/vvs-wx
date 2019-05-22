@@ -1,0 +1,64 @@
+<view class='shopCart'>
+
+  <!-- 购物车没有商品时 -->
+  <view class='empty' wx:if="{{shopCartList.list.length<=0}}">
+    <text>购物车快饿瘪了 T.T\n</text>
+    <text>快给我挑点宝贝\n</text>
+    <i-button bind:click="goHome" i-class="btn" type="error" inline>去逛逛</i-button>
+  </view>
+
+  <!-- 购物车有商品时 -->
+  <view class='have' wx:else>
+    <view class='have_wrap' wx:for="{{shopCartList.list}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}">
+
+      <radio class='radio'>
+        <image src='{{item.img}}'></image>
+      </radio>
+
+      <view class='content'>
+        <text>{{item.name}}\n</text>
+        <view class='ufv' wx:if='{{item.price_type==3}}'>
+          <text decode="{{true}}" space="{{true}}">UFV {{item.price}} UFV {{item.price_origin}}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+          <text style='float: right;'>x{{item.count}}</text>
+        </view>
+
+        <view class='ufv' wx:elif='{{item.price_type==2}}'>
+          <text decode="{{true}}" space="{{true}}">金鱼 {{item.price}} 金鱼 {{item.price_origin}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+          <text style='float: right;'>x{{item.count}}</text>
+        </view>
+
+        <view class='ufv' wx:else>
+          <text decode="{{true}}" space="{{true}}">银鱼 {{item.price}} 银鱼 {{item.price_origin}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+          <text style='float: right;'>x{{item.count}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 猜你喜欢 -->
+  <view class='newest'>
+    <view class="newest-title">
+      <text>猜你喜欢</text>
+    </view>
+    <view class="newest-box">
+      <view class="newest-list" bindtap='toGoodsInfo' wx:for="{{guessLike}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}">
+        <view>
+          <image src="{{item.img}}"></image>
+          <view class="newest-text">
+            <text>{{item.name}}</text>
+          </view>
+          <view class="newest-text price">
+            <text>￥ {{item.price}}</text>
+            <text>￥ {{item.price_origin}}</text>
+          </view>
+          <view class='newest-text print'>
+            <text>已售{{item.sold_count}}件</text>
+            <text>立即购买</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</view>

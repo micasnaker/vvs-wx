@@ -1,0 +1,105 @@
+<view class='home'>
+
+  <!-- 轮播图 -->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{bannerList}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}">
+      <swiper-item>
+        <image src="{{item.path}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 宫格栏 -->
+  <view class='cow'>
+    <text>美食</text>|
+    <text>美妆</text>|
+    <text>运动</text>|
+    <text>体检</text>|
+    <text>亲子</text>|
+    <text>娱乐</text>
+    <text>娱乐</text>|
+    <text>娱乐</text>|
+    <text>娱乐</text>|
+    <text>娱乐</text>|
+    <text>娱乐</text>|
+    <text>娱乐</text>
+  </view>
+
+  <!-- 首页商品栏 -->
+
+  <!-- 新品栏 -->
+  <view class='newest'>
+    <view class="newest-title">
+      <text>新品上架</text>
+    </view>
+    <view class="newest-box">
+      <view  bindtap='toGoodsInfo' class="newest-list" wx:for="{{newGoods}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}">
+        <view>
+          <image src="{{item.img}}"></image>
+          <view class="newest-text">
+            <text>{{item.name}}</text>
+          </view>
+          <view class="newest-text price">
+            <text>￥ {{item.price}}</text>
+            <text>￥ {{item.price_origin}}</text>
+          </view>
+          <view class='newest-text print'>
+            <text>已售{{item.sold_count}}件</text>
+            <text>立即购买</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 热卖栏 -->
+  <view class='newest'>
+    <view class="newest-title">
+      <text>热卖产品</text>
+    </view>
+    <view class="newest-box">
+    <view class="newest-list" bindtap='toGoodsInfo' wx:for="{{hotGoods}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}">
+        <view>
+          <image src="{{item.img}}"></image>
+          <view class="newest-text">
+            <text>{{item.name}}</text>
+          </view>
+          <view class="newest-text price">
+            <text>￥ {{item.price}}</text>
+            <text>￥ {{item.price_origin}}</text>
+          </view>
+          <view class='newest-text print'>
+            <text>已售{{item.sold_count}}件</text>
+            <text>立即购买</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 推荐栏 -->
+  <view class='newest'>
+    <view class="newest-title">
+      <text>推荐产品</text>
+    </view>
+    <view class="newest-box">
+   <view class="newest-list" bindtap='toGoodsInfo' wx:for="{{recomGoods}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}">
+        <view>
+          <image src="{{item.img}}"></image>
+          <view class="newest-text">
+            <text>{{item.name}}</text>
+          </view>
+          <view class="newest-text price">
+            <text>￥ {{item.price}}</text>
+            <text>￥ {{item.price_origin}}</text>
+          </view>
+          <view class='newest-text print'>
+            <text>已售{{item.sold_count}}件</text>
+            <text>立即购买</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

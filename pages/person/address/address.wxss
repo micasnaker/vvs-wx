@@ -1,0 +1,46 @@
+/* pages/person/address/address.wxss */
+
+.address {
+  background-color: #f4f4f4;
+  height: 100%;
+}
+
+.address_content {
+  font-family: PingFangSC-regular;
+  line-height: 65rpx;
+  padding: 20rpx 20rpx;
+  background-color: #ffff;
+  border-bottom: 1px solid #f4f4f4;
+  /* 文本不换行，超过部分部分显示省略号 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.address_content:last-child {
+  border-bottom: none;
+  margin-bottom: 200rpx;
+}
+
+.name_phone {
+  font-size: 16px;
+  color: #101010;
+}
+
+.address_wrap {
+  color: #666466;
+  font-size: 13.5px;
+}
+
+.edit {
+  float: right;
+}
+
+/* 新增收货地址 */
+
+.addAddress {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

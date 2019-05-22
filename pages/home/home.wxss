@@ -1,0 +1,92 @@
+/* pages/home/home.wxss */
+/* 轮播图部分 */
+swiper {
+    height: 360rpx;
+    width: 100%;
+    text-align: center;
+}
+swiper-item image {
+    width: 96%;
+    height: 96%;
+    border-radius: 10px;
+    margin: 2% 2%;
+}
+
+/* 宫格栏 */
+.cow{
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  font-size: 15px;
+  margin: 20rpx 10rpx;
+  flex-wrap: wrap;
+}
+
+.cow text{
+  width: 15.5%;
+  font-family: Arial;
+}
+
+/* 商品列表 */
+.newest-title{
+    width: 100%;
+    padding:30rpx 0;
+    height: 40rpx;
+    color: #AB956D;
+    text-align: center;
+}
+.newest-box{
+    padding:0 40rpx;
+}
+.newest-box .newest-list{
+    display: inline-block;
+    width: 325rpx;
+    margin:0 20rpx 20rpx 0;
+    border-radius: 10px;
+    text-align: center;
+    background: #f5f6f5;
+    padding-bottom: 3%;
+}
+.newest-box .newest-list:nth-child(2n){
+    margin-right: 0;
+}
+.newest-box .newest-list image{
+    width: 175rpx;
+    height: 175rpx;
+    margin: 20rpx 0 10rpx;
+}
+.newest-box .newest-list .newest-text{
+    font-size: 28rpx;
+}
+
+.price{
+  display: flex;
+  justify-content: space-around;
+}
+
+.price text:first-child{
+  color: rgba(162,49,62,1);
+  font-size: 17px;
+}
+
+.price text:last-child{
+  text-decoration:line-through;
+  color: rgba(102,100,102,1);
+}
+
+.print{
+  display: flex;
+  justify-content: space-around;
+  margin-left: 20rpx;
+  color: #666466;
+}
+
+.print text:last-child{
+  font-size: 12px;
+  background-color: #E51C23;
+  color: #FFFFFF;
+  font-family: Microsoft Yahei;
+  border-radius: 5px;
+  width: 120rpx;
+}

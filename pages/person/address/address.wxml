@@ -1,0 +1,19 @@
+<!--pages/person/address/address.wxml-->
+<view class='address'>
+
+  <!-- 地址列表 -->
+  <view>
+    <view bindtap='edit' class='address_content' wx:for="{{addressList}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}">
+    <radio disabled='{{disabled}}' checked='{{item.is_default}}'></radio>
+      <text class='name_phone'>{{item.contact_name}}，{{item.phone}}\n</text>
+      <i-icon class='edit' type="editor" size="25" />
+      <text class='address_wrap'>收货地址：{{item.address}}</text>
+    </view>
+  </view>
+
+  <!-- 新增收货地址 -->
+  <view class='addAddress'>
+    <i-button bind:click="add_Address" type="error" long="true">新增收货地址</i-button>
+
+  </view>
+</view>
